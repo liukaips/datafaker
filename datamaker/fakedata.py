@@ -4,8 +4,8 @@ import datetime
 import random
 import time
 from faker import Faker, Factory
-from datafaker import compat
-from datafaker.compat import Dict
+from datamaker import compat
+from datamaker.compat import Dict
 
 
 class FackData(object):

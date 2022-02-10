@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-from datafaker.dbs.rdbdb import RdbDB
-from datafaker.drivers import load_sqlalchemy
+from datamaker.dbs.rdbdb import RdbDB
+from datamaker.drivers import load_sqlalchemy
 
 
 class HiveDB(RdbDB):

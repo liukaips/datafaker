@@ -36,7 +36,7 @@ goto :EOF
 #!/usr/bin/env python
 
 import sys
-from datafaker import main
+from datamaker import main
 
 if __name__ == "__main__":
 

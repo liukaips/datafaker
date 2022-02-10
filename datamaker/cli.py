@@ -5,12 +5,12 @@ import sys
 import os
 import traceback
 
-from datafaker.constant import __version__, DEFAULT_INTERVAL, DEFAULT_FORMAT, DEFAULT_LOCALE, BATCH_SIZE, WORKERS
-from datafaker.constant import JSON_FORMAT
+from datamaker.constant import __version__, DEFAULT_INTERVAL, DEFAULT_FORMAT, DEFAULT_LOCALE, BATCH_SIZE, WORKERS
+from datamaker.constant import JSON_FORMAT
 
 # solve problem of oracle database
 # UnicodeEncodeError: 'ascii' codec can't encode characters in position 32-3
-from datafaker.exceptions import ParamError
+from datamaker.exceptions import ParamError
 
 os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 
@@ -22,7 +22,7 @@ def parse_args():
         exit(0)
 
     parser = argparse.ArgumentParser(
-        description='datafaker, a tool to make generate data easy.')
+        description='datamaker, a tool to make generate data easy.')
     parser.add_argument('dbtype', nargs='?', action='store', help='data source type')
     parser.add_argument('connect', nargs='?', action='store', help='connect info to the database')
     parser.add_argument('table', action='store', help='table to process')
@@ -62,9 +62,9 @@ def parse_args():
         exit(0)
 
     if args.format == JSON_FORMAT:
-        if args.dbtype not in ['file', 'kafka'] and not args.outprint:
+        if args.dbtype not in ['file', 'kafka', 'stream'] and not args.outprint:
             raise ParamError('rdb not support for json format')
-    if args.metaj and args.dbtype not in ['file', 'kafka']:
+    if args.metaj and args.dbtype not in ['file', 'kafka', 'stream']:
         raise ParamError('rdb not support for metaj')
 
     return args
@@ -75,7 +75,7 @@ def load_db_class(dbtype):
     read subcommand from subcmds directory
     :return: subcommands list
     """
-    pkgname = 'datafaker.dbs.' + dbtype + 'db'
+    pkgname = 'datamaker.dbs.' + dbtype + 'db'
     classname = dbtype.capitalize() + 'DB'
     module = __import__(pkgname, fromlist=(classname))
     db_class = getattr(module, classname)

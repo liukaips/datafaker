@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 import re
 
-from datafaker.reg import reg_float, reg_keyword, reg_args, reg_cmd, reg_all_keywords, reg_replace_keywords
+from datamaker.reg import reg_float, reg_keyword, reg_args, reg_cmd, reg_all_keywords, reg_replace_keywords
 
 
 def test_reg_float():

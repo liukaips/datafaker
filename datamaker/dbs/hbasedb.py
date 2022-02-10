@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-from datafaker.dbs.basedb import BaseDB
-from datafaker.exceptions import ParamError
+from datamaker.dbs.basedb import BaseDB
+from datamaker.exceptions import ParamError
 import happybase
 
-from datafaker.reg import reg_args
+from datamaker.reg import reg_args
 
 
 class HbaseDB(BaseDB):

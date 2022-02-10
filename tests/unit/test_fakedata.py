@@ -2,8 +2,8 @@
 # -*- coding: UTF-8 -*-
 import datetime
 
-from datafaker.constant import DEFAULT_LOCALE
-from datafaker.fakedata import FackData
+from datamaker.constant import DEFAULT_LOCALE
+from datamaker.fakedata import FackData
 
 fakedata = FackData(DEFAULT_LOCALE)
 today = datetime.date.today()

@@ -1,4 +1,4 @@
-# datafaker
+# datamaker
 
 fake data and insert to databases
 

@@ -1,5 +1,5 @@
 ## 一、开源情况
-datafaker是一个大批量测试数据和流测试数据生成工具，兼容python2.7和python3.4+，欢迎下载使用。github地址为：
+datamaker是一个大批量测试数据和流测试数据生成工具，兼容python2.7和python3.4+，欢迎下载使用。github地址为：
 
 https://github.com/gangly/datafaker
 
@@ -30,7 +30,7 @@ https://github.com/gangly/datafaker
 比如针对流数据，需要随机每隔几秒钟写入kafka。或者动态随机插入mysql，手工操作相对麻烦，而且不好统计写入数据条数
 
 
-**<font color=#6495ED face="黑体">datafaker是一个多数据源测试数据构造工具，可以模拟产生大部分常用数据类型，具有以下功能：</font>**
+**<font color=#6495ED face="黑体">datamaker是一个多数据源测试数据构造工具，可以模拟产生大部分常用数据类型，具有以下功能：</font>**
 
 
 - 多种数据类型
@@ -47,7 +47,7 @@ https://github.com/gangly/datafaker
 
 ## 三、软件架构
 
-datafaker是用python编写，支持python2.7，python3.4+。已经发布在pypi，https://pypi.org/search/?q=datafaker。
+datamaker是用python编写，支持python2.7，python3.4+。已经发布在pypi，https://pypi.org/search/?q=datafaker。
 
 ![pay](../img/datafaker.png)
 
@@ -73,14 +73,14 @@ python setup.py install
 方法2.直接安装（此方法使用若有问题，请用方法1安装）
 
 ```bash
-pip install datafaker
+pip install datamaker
 ```
 
 更新到最新版本：
-pip install datafaker --upgrade
+pip install datamaker --upgrade
 
 卸载工具：
-pip uninstall datafaker
+pip uninstall datamaker
 
 
 #### 安装对应数据库包

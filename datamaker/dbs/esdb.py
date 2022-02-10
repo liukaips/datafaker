@@ -5,9 +5,9 @@ import json
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 
-from datafaker.dbs.basedb import BaseDB
-from datafaker.exceptions import ParamError
-from datafaker.utils import json_item
+from datamaker.dbs.basedb import BaseDB
+from datamaker.exceptions import ParamError
+from datamaker.utils import json_item
 
 
 class EsDB(BaseDB):

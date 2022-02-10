@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-from datafaker.constant import STR_TYPES
-from datafaker.dbs.basedb import BaseDB
-from datafaker.drivers import load_sqlalchemy
+from datamaker.constant import STR_TYPES
+from datamaker.dbs.basedb import BaseDB
+from datamaker.drivers import load_sqlalchemy
 
 
 class RdbDB(BaseDB):

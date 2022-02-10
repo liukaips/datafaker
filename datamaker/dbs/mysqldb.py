@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-from datafaker.dbs.basedb import BaseDB
+from datamaker.dbs.basedb import BaseDB
 # from drivers import load_sqlalchemy
-from datafaker.dbs.rdbdb import RdbDB
-from datafaker.drivers import load_sqlalchemy
-from datafaker.utils import save2db
+from datamaker.dbs.rdbdb import RdbDB
+from datamaker.drivers import load_sqlalchemy
+from datamaker.utils import save2db
 
 
 class MysqlDB(RdbDB):

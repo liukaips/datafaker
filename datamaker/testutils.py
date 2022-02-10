@@ -6,7 +6,7 @@ import shutil
 import string
 import tempfile
 
-from datafaker.exceptions import ParamValidationError
+from datamaker.exceptions import ParamValidationError
 
 
 def random_string(size):

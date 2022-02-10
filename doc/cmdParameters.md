@@ -2,7 +2,7 @@
 English | [中文](zh_CN/命令参数.md)
 
 
-The datafaker parameter contains 4 mandatory parameters and some optional parameters, as shown in the following table.
+The datamaker parameter contains 4 mandatory parameters and some optional parameters, as shown in the following table.
 
 | parameter name | meaning |  type | required | Defaults | note |
 | ------ | ------ | ------ | ----- | ------| ---- |

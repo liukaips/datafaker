@@ -2,10 +2,10 @@
 # -*- coding: UTF-8 -*-
 import os
 
-from datafaker.compat import safe_encode
-from datafaker.constant import JSON_FORMAT, TEXT_FORMAT
-from datafaker.dbs.basedb import BaseDB
-from datafaker.utils import save2file, json_item
+from datamaker.compat import safe_encode
+from datamaker.constant import JSON_FORMAT, TEXT_FORMAT
+from datamaker.dbs.basedb import BaseDB
+from datamaker.utils import save2file, json_item
 
 
 class FileDB(BaseDB):

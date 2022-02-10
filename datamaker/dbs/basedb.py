@@ -4,13 +4,13 @@ import time
 from abc import abstractmethod
 from time import sleep
 
-from datafaker import compat
-from datafaker.compat import safe_decode, queue
-from datafaker.constant import INT_TYPES, FLOAT_TYPES, ENUM_FILE, JSON_FORMAT, MAX_QUEUE_SIZE, MIN_RECORDS_FOR_PARALLEL
-from datafaker.exceptions import EnumMustNotEmptyError, ParseSchemaError
-from datafaker.fakedata import FackData
-from datafaker.reg import reg_keyword, reg_cmd, reg_args, reg_all_keywords, reg_replace_keywords
-from datafaker.utils import count_time, read_file_lines, json_item, process_op_args, read_file
+from datamaker import compat
+from datamaker.compat import safe_decode, queue
+from datamaker.constant import INT_TYPES, FLOAT_TYPES, ENUM_FILE, JSON_FORMAT, MAX_QUEUE_SIZE, MIN_RECORDS_FOR_PARALLEL
+from datamaker.exceptions import EnumMustNotEmptyError, ParseSchemaError
+from datamaker.fakedata import FackData
+from datamaker.reg import reg_keyword, reg_cmd, reg_args, reg_all_keywords, reg_replace_keywords
+from datamaker.utils import count_time, read_file_lines, json_item, process_op_args, read_file
 
 
 class BaseDB(object):

@@ -3,8 +3,8 @@
 import time
 
 from kafka import KafkaProducer
-from datafaker.dbs.basedb import BaseDB
-from datafaker.utils import json_item, count_time
+from datamaker.dbs.basedb import BaseDB
+from datamaker.utils import json_item, count_time
 
 
 class KafkaDB(BaseDB):

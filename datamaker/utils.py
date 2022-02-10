@@ -7,11 +7,11 @@ import json
 import re
 import time
 
-from datafaker.compat import safe_decode, safe_encode, compat_open
-from datafaker.constant import STR_TYPES, INT_TYPES, FLOAT_TYPES
-from datafaker.drivers import load_sqlalchemy
-from datafaker.exceptions import FileNotFoundError
-from datafaker.reg import reg_keyword, reg_cmd, reg_args, reg_integer, reg_int, reg_all_int
+from datamaker.compat import safe_decode, safe_encode, compat_open
+from datamaker.constant import STR_TYPES, INT_TYPES, FLOAT_TYPES
+from datamaker.drivers import load_sqlalchemy
+from datamaker.exceptions import FileNotFoundError
+from datamaker.reg import reg_keyword, reg_cmd, reg_args, reg_integer, reg_int, reg_all_int
 
 
 def save2file(items, outfile):
@@ -22,7 +22,7 @@ def save2file(items, outfile):
     :param spliter:
     :return:
     """
-    with open(outfile, 'a+') as fp:
+    with open(outfile, 'w+') as fp:
         fp.writelines(items)
 
 
@@ -110,10 +110,10 @@ def process_op_args(arg, lst_name):
     """
     解析op标记的参数
     将c12*c2+c22 解析成 columns[12]*columns[2]+columns[22]
-    
-    :param arg: 
-    :param lst_name: 
-    :return: 
+
+    :param arg:
+    :param lst_name:
+    :return:
     """
     digits = sorted(reg_all_int(arg), reverse=True)
 

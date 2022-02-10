@@ -3,9 +3,9 @@
 import os
 import sys
 
-from datafaker import main
-from datafaker.cli import parse_args
-from datafaker.testutils import FileCreator
+from datamaker import main
+from datamaker.cli import parse_args
+from datamaker.testutils import FileCreator
 
 
 class TestDataFaker:
@@ -84,7 +84,7 @@ class TestDataFaker:
 
     def test_fake_data_to_file(self):
 
-        cmd = 'datafaker file {connect} hello.txt 10 --meta {meta_file}'.format(connect=self.test_tmpdir, meta_file=self.meta_file)
+        cmd = 'datamaker file {connect} hello.txt 10 --meta {meta_file}'.format(connect=self.test_tmpdir, meta_file=self.meta_file)
         result = self._main_file(cmd)
         assert 10 == len(result)
 

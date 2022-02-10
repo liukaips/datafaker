@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-from datafaker.utils import json_item, diffdate, process_op_args, read_file
+from datamaker.utils import json_item, diffdate, process_op_args, read_file
 import json
 
 

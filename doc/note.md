@@ -5,13 +5,13 @@ English | [中文](zh_CN/注意事项.md)
 
 If you need to construct a large amount of data, native Python will take a lot of time. Please use pypy to execute datafaker. For example:
 
-```pypy -m datafaker hbase localhost:9090 PIGONE 50000 --meta hbase.txt```
+```pypy -m datamaker hbase localhost:9090 PIGONE 50000 --meta hbase.txt```
 
 Or multi thread execution, 8 threads generate data, and write PG 2000 pieces of data in batch each time:
 
 
 
-```datafaker mysql postgresql+psycopg2://postgres:postgres@localhost/testpg pig_fnumbe_test 100000 --meta meta.txt --worker 8 --batch 2000```
+```datamaker mysql postgresql+psycopg2://postgres:postgres@localhost/testpg pig_fnumbe_test 100000 --meta meta.txt --worker 8 --batch 2000```
 
 
 
@@ -45,7 +45,7 @@ Any relational database that supports sqlache can be used, such as PG, Oracle, t
 
 But the type is RDB, for example:
 
-```datafaker rdb postgresql+psycopg2://postgres:postgres@localhost/testpg pig_fnumbe_test 100000 --meta meta.txt --worker 8 --batch 2000```
+```datamaker rdb postgresql+psycopg2://postgres:postgres@localhost/testpg pig_fnumbe_test 100000 --meta meta.txt --worker 8 --batch 2000```
 
 Write to Oracle
 

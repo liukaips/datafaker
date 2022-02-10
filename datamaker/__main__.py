@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import sys
-from datafaker.cli import main
+from datamaker.cli import main
 
 if __name__ == "__main__":
 

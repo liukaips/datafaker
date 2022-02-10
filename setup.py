@@ -41,17 +41,17 @@ if sys.version_info[:2] == (2, 6):
 
 
 setup_options = dict(
-    name='datafaker',
-    version=find_version("datafaker", "constant.py"),
+    name='datamaker',
+    version=find_version("datamaker", "constant.py"),
     description='A tool for generating batch test data or stream data.',
     long_description=open('README.rst').read(),
     author='GaryLi',
     author_email='gangly123@163.com',
-    url='https://github.com/gangly/datafaker',
-    scripts=['bin/datafaker', 'bin/datafaker.cmd',
+    url='https://github.com/gangly/datamaker',
+    scripts=['bin/datamaker', 'bin/datamaker.cmd',
              ],
     packages=find_packages(exclude=['tests*']),
-    package_data={'datafaker': ['data/*.json', 'data/*.ini', 'requirements.txt', ]},
+    package_data={'datamaker': ['data/*.json', 'data/*.ini', 'requirements.txt', ]},
     install_requires=requires,
     extras_require={
         ':python_version=="2.6"': [
@@ -95,14 +95,14 @@ if 'py2exe' in sys.argv:
             'skip_archive': True,
             'dll_excludes': ['crypt32.dll'],
             'packages': ['urllib', 'httplib', 'HTMLParser',
-                         'datafaker', 'ConfigParser', 'xml.etree', 'pipes'],
+                         'datamaker', 'ConfigParser', 'xml.etree', 'pipes'],
         }
     }
-    setup_options['console'] = ['bin/datafaker']
+    setup_options['console'] = ['bin/datamaker']
 
 
-BIN_HCMD = '/usr/bin/datafaker'
-LOCAL_HCMD = '/usr/local/bin/datafaker'
+BIN_HCMD = '/usr/bin/datamaker'
+LOCAL_HCMD = '/usr/local/bin/datamaker'
 if sys.platform != 'win32' and os.path.exists(BIN_HCMD):
     os.remove(BIN_HCMD)
 if sys.platform != 'win32' and os.path.exists(LOCAL_HCMD):

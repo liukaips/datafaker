@@ -3,7 +3,7 @@ Datafaker - Tool for faking data
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-[![Stargazers over time](https://starchart.cc/gangly/datafaker.svg)](https://starchart.cc/gangly/datafaker)
+[![Stargazers over time](https://starchart.cc/gangly/datamaker.svg)](https://starchart.cc/gangly/datafaker)
    
 English | [中文](doc/zh_CN/README.md)
 
@@ -12,7 +12,7 @@ English | [中文](doc/zh_CN/README.md)
 
 Datafaker is a large-scale test data and flow test data generation tool. It is compatible with python2.7 and python3.4+. Welcome to download and use. The github address is:
 
-https://github.com/gangly/datafaker
+https://github.com/gangly/datamaker
 
 Document sync updates on github
 
@@ -39,7 +39,7 @@ The amount of data created manually is small, and the primary key in multiple ta
 - Dynamic random write.
 For example, for streaming data, you need to write kafka randomly every few seconds. Or dynamically insert mysql randomly, manual operation is relatively cumbersome, and it is not good to count the number of data written.
 
-In response to these current pain points, datafaker came into being. Datafaker is a multi-data source test data construction tool that can simulate most common data types and easily solve the above pain points. Datafaker has the following features:
+In response to these current pain points, datamaker came into being. Datafaker is a multi-data source test data construction tool that can simulate most common data types and easily solve the above pain points. Datafaker has the following features:
 
 - Multiple data types.
 Includes common database field types (integer, float, character), custom types (IP address, mailbox, ID number, etc.)
@@ -55,7 +55,7 @@ Datafaker is written in python and supports python2.7, python3.4+. The current v
 
 
 <!-- <div align=center><img -->
-<!-- src="https://github.com/gangly/datafaker/blob/master/doc/img/datafaker.png" width="500" height="600" alt="软件架构"/> -->
+<!-- src="https://github.com/gangly/datamaker/blob/master/doc/img/datafaker.png" width="500" height="600" alt="软件架构"/> -->
 <!-- </div> -->
 
 ![architectur](doc/img/datafaker.png)
@@ -78,17 +78,17 @@ python setup.py install
 
 #### Method 2, use pip:
 ```bash
-pip install datafaker
+pip install datamaker
 ```
 
 #### Upgrade tool
 ```bash
-pip install datafaker --upgrade
+pip install datamaker --upgrade
 ```
 
 #### Uninstall tool
 ```bash
-pip uninstall datafaker
+pip uninstall datamaker
 ```
 
 #### Install require package

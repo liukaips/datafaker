@@ -9,7 +9,7 @@ import zipfile
 import six
 
 # If you ever want to import from the vendored six. Add it here and then
-# import from datafaker.compat. Also try to keep it in alphabetical order.
+# import from datamaker.compat. Also try to keep it in alphabetical order.
 # This may get large.
 advance_iterator = six.advance_iterator
 PY3 = six.PY3
@@ -38,7 +38,7 @@ except ImportError:
 is_windows = sys.platform == 'win32'
 
 if is_windows:
-    from datafaker.multithreading import *
+    from datamaker.multithreading import *
     from six.moves.queue import Queue
 else:
     import multiprocessing

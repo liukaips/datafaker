@@ -3,8 +3,8 @@
 import os
 import unittest
 
-from datafaker.testutils import FileCreator
-from datafaker.utils import read_file_lines
+from datamaker.testutils import FileCreator
+from datamaker.utils import read_file_lines
 
 class TestFileCreator(unittest.TestCase):
 

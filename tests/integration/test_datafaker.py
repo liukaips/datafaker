@@ -3,9 +3,9 @@
 import os
 import sys
 
-from datafaker import main
-from datafaker.cli import parse_args
-from datafaker.testutils import FileCreator
+from datamaker import main
+from datamaker.cli import parse_args
+from datamaker.testutils import FileCreator
 
 
 META_CONTENT = """
@@ -65,7 +65,7 @@ def _make_tmp_file():
 def test_fake_data_to_file():
 
     test_tmpdir, meta_file = _make_tmp_file()
-    cmd = 'datafaker file {connect} hello.txt 10 --meta {meta_file}'.format(connect=test_tmpdir, meta_file=meta_file)
+    cmd = 'datamaker file {connect} hello.txt 10 --meta {meta_file}'.format(connect=test_tmpdir, meta_file=meta_file)
     result = _main_file(cmd)
     assert 10 == len(result)
 
@@ -73,7 +73,7 @@ def test_fake_data_to_file():
 def test_fake_data_to_file_with_header():
 
     test_tmpdir, meta_file = _make_tmp_file()
-    cmd = 'datafaker file {connect} hello.txt 10 --meta {meta_file} --withheader'.format(connect=test_tmpdir, meta_file=meta_file)
+    cmd = 'datamaker file {connect} hello.txt 10 --meta {meta_file} --withheader'.format(connect=test_tmpdir, meta_file=meta_file)
 
     result = _main_file(cmd)
     assert 11 == len(result)
@@ -82,7 +82,7 @@ def test_fake_data_to_file_with_header():
 
 def test_fake_data_to_mysql():
 
-    cmd = 'datafaker mysql mysql+mysqldb://root:root@localhost:3600/test student 100'
+    cmd = 'datamaker mysql mysql+mysqldb://root:root@localhost:3600/test student 100'
     sys.argv = cmd.strip().split(' ')
     main()
 
@@ -112,7 +112,7 @@ def test_fake_data_to_hbase():
     """
     test_tmpdir, meta_file = _make_tmp_file()
 
-    cmd = 'datafaker hbase localhost:9090 pigtest 100 --meta {meta_file}'.format(meta_file=meta_file)
+    cmd = 'datamaker hbase localhost:9090 pigtest 100 --meta {meta_file}'.format(meta_file=meta_file)
 
     _main(cmd, meta_content)
 
@@ -125,7 +125,7 @@ def test_hive():
         identity_id||string||猪只身份ID[:enum(LL05MLKS3G170201F40999)]
     """
     test_tmpdir, meta_file = _make_tmp_file()
-    cmd = 'datafaker hive hive://localhost:10000/yz_targetmetric_nuc dws_f_nuc_female_feeding_test 10 --meta {meta_file}'.format(meta_file=meta_file)
+    cmd = 'datamaker hive hive://localhost:10000/yz_targetmetric_nuc dws_f_nuc_female_feeding_test 10 --meta {meta_file}'.format(meta_file=meta_file)
     _main(cmd, meta_content)
 
 
@@ -144,25 +144,25 @@ def test_op():
         capStampDate||datetime||捕获日期[:date(-5d,-0d, %Y-%m-%d)]
     """
     test_tmpdir, meta_file = _make_tmp_file()
-    cmd = 'datafaker file . hello.txt 100 --meta {meta_file} --format text --outprint'.format(meta_file=meta_file)
+    cmd = 'datamaker file . hello.txt 100 --meta {meta_file} --format text --outprint'.format(meta_file=meta_file)
     _main(cmd, meta_content)
 
 
 def test_es():
     test_tmpdir, meta_file = _make_tmp_file()
-    cmd = 'datafaker es localhost:9200 example1/tp1 100 --auth elastic:elastic --meta {meta_file} --format text'.format(meta_file=meta_file)
+    cmd = 'datamaker es localhost:9200 example1/tp1 100 --auth elastic:elastic --meta {meta_file} --format text'.format(meta_file=meta_file)
     _main(cmd)
 
 
 def test_mysql():
 
-    cmd = 'datafaker mysql mysql+mysqldb://root:root@localhost:3600/test pig_fnumbe_test 1 --meta ../data/meta.txt --format text'
+    cmd = 'datamaker mysql mysql+mysqldb://root:root@localhost:3600/test pig_fnumbe_test 1 --meta ../data/meta.txt --format text'
     sys.argv = cmd.strip().split(' ')
     main()
 
 
 def test_mysql_with_nometa():
-    cmd = "datafaker mysql mysql+mysqldb://root:root@localhost:3600/test stu 10"
+    cmd = "datamaker mysql mysql+mysqldb://root:root@localhost:3600/test stu 10"
     sys.argv = cmd.strip().split(' ')
     main()
 
@@ -181,7 +181,7 @@ def test_int():
         address||char(40)||default,
     """
     test_tmpdir, meta_file = _make_tmp_file()
-    cmd = 'datafaker file . hello.txt 20 --meta {meta_file} --format text --format json --outprint'.format(meta_file=meta_file)
+    cmd = 'datamaker file . hello.txt 20 --meta {meta_file} --format text --format json --outprint'.format(meta_file=meta_file)
     _main(cmd, meta_content)
 
 
@@ -190,7 +190,7 @@ def test_date():
         date2||date||[:date(-30d, -20d, %Y.%m.%d)]
     """
     test_tmpdir, meta_file = _make_tmp_file()
-    cmd = 'datafaker file . hello.txt 20 --meta {meta_file} --format text --format json --outprint'.format(meta_file=meta_file)
+    cmd = 'datamaker file . hello.txt 20 --meta {meta_file} --format text --format json --outprint'.format(meta_file=meta_file)
     _main(cmd, meta_content)
 
 
@@ -207,7 +207,7 @@ def test_order_enum():
         address||char(40)||default,
     """
     test_tmpdir, meta_file = _make_tmp_file()
-    cmd = 'datafaker file . hello.txt 21 --meta {meta_file} --format text --outprint --outspliter :'.format(meta_file=meta_file)
+    cmd = 'datamaker file . hello.txt 21 --meta {meta_file} --format text --outprint --outspliter :'.format(meta_file=meta_file)
     _main(cmd, meta_content)
 
 
@@ -217,7 +217,7 @@ def test_oracle():
         age||int||学生年龄[:age]
         plan_end_time||varchar(32)||计划结束时间[:date_between(2020-01-01, 2020-12-02, %Y-%m-%d)]
     """
-    cmd = 'datafaker rdb oracle://root:root@127.0.0.1:1521/helowin stu 10 --meta stu.txt --outprint'
+    cmd = 'datamaker rdb oracle://root:root@127.0.0.1:1521/helowin stu 10 --meta stu.txt --outprint'
     _main(cmd, meta_content)
 
 
@@ -235,9 +235,9 @@ def test_stu2():
         ip||varchar(32)||IP[:ipv4]
         address||text||home address[:address]
         """
-    # cmd = 'datafaker file . stu 10 --meta stu.txt --outprint'
-    # cmd = "datafaker mysql mysql+mysqldb://root:root@localhost:3600/test stu 10 --meta stu.txt"
-    cmd = "datafaker kafka localhost:9092 hello 10 --meta meta.txt"
+    # cmd = 'datamaker file . stu 10 --meta stu.txt --outprint'
+    # cmd = "datamaker mysql mysql+mysqldb://root:root@localhost:3600/test stu 10 --meta stu.txt"
+    cmd = "datamaker kafka localhost:9092 hello 10 --meta meta.txt"
     _main(cmd, meta_content)
 
 
